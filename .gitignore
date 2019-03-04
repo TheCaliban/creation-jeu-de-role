@@ -1,0 +1,11 @@
+/*
+!/add-ons/
+!/add-ons/*
+!/admin/
+!/admin/*
+!/js/
+!/js/*
+!/style/
+!/style/*
+!*.php
+!.gitignore
