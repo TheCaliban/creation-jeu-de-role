@@ -19,17 +19,12 @@
 			$mtnc = ($data_feat['MultipleTakeNonCumulative'] == 0) ? 'Faux' : 'Vrai';
 			$spellLevel = ($data_feat['SpellLevel'] == null) ? "" : "<br/>Niveau du sort: " .$data_feat['SpellLevel']. "<br/>";
 			
-			echo utf8_encode('<span>'.$data_feat['ID_Feat'].' - '.$data_feat['FeatType'].'</span><br/><span>'.$spellLevel.'</span><br/><span>'.$data_feat['Feat'].'</span><br/><span>' .$data_feat['Description']. '</span><br/><br/><span>WT: ' .$wa	. '<br/>MTC: ' .$mtc. '<br/>MTNC: ' .$mtnc. '</span>');
+			echo '<span>'.$data_feat['ID_Feat'].' - '.$data_feat['FeatType'].'</span><br/><span>'.$spellLevel.'</span><br/><span>'.$data_feat['Feat'].'</span><br/><span>' .$data_feat['Description']. '</span><br/><br/><span>WT: ' .$wa	. '<br/>MTC: ' .$mtc. '<br/>MTNC: ' .$mtnc. '</span>';
 		}
 		else
 		{
 			echo 'Aucune entrée trouvée !';
 		}
-		
-		exit;
 	}
 	
 	echo 'No id_feat, feattype';
-	exit;
-
-?>

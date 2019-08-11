@@ -16,5 +16,3 @@ if(isset($_POST['id_character']))
         echo "Ne possède aucune classe de prédilection";
     }
 }
-
-?>

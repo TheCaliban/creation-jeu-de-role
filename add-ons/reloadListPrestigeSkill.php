@@ -9,12 +9,12 @@
         
         while($data_skills = $q_select_skills->fetch())
         {
-            echo utf8_encode('<div class="form-check">
+            echo '<div class="form-check">
                       <input class="form-check-input checkbox_list" type="checkbox" value="' .$data_skills['ID_Competence']. '" id="checkBox_' .$data_skills['ID_Competence']. '">
                       <label class="form-check-label" for="checkBox_' .$data_skills['ID_Competence']. '">'
                         .$data_skills['Competence'].
                       '</label>
-                    </div>');
+                    </div>';
         }
         echo '<br/><br/><button class="btn btn-dark" id="addSkills" onClick="getCheckedCheckbox()">Ajouter des compétences</button>';
     }

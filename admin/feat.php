@@ -67,7 +67,7 @@
 
 										while($data_feat = $q_select_feat->fetch())
 										{
-											echo utf8_encode("<option value='" .$data_feat['ID_Feat']. "-" .$data_feat['FeatType']. "'>" .$data_feat['Feat']. "</option>");
+											echo "<option value='" .$data_feat['ID_Feat']. "-" .$data_feat['FeatType']. "'>" .$data_feat['Feat']. "</option>";
 										}
 
 										$q_select_feat->closeCursor();

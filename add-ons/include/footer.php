@@ -136,11 +136,6 @@
                             console.error(data);
                         }
                     });
-/*                }
-                else
-                {
-                    console.info("Champs vide !");
-                }*/
            });
     });
 

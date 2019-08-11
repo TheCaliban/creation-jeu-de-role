@@ -86,7 +86,7 @@
 
 								while($data_select_race = $q_select_race->fetch())
 								{
-									echo utf8_encode('<option value="' .$data_select_race['ID_Race']. '">' .$data_select_race['Race']. '</option>');
+									echo '<option value="' .$data_select_race['ID_Race']. '">' .$data_select_race['Race']. '</option>';
 								}
 							
 							
@@ -128,7 +128,7 @@
 
                                         for($i = 0; $i < min(sizeof($arr_class), sizeof($arr_id_class)); $i++)
                                         {
-                                            echo utf8_encode('<option value="' .$arr_id_class[$i]. '">' .$arr_class[$i]. '</option>');
+                                            echo '<option value="' .$arr_id_class[$i]. '">' .$arr_class[$i]. '</option>';
                                         }
 
                                     ?>
@@ -164,7 +164,7 @@
 
                                     while($data_select_prestige_class = $q_select_prestige_class->fetch())
                                     {
-                                        echo utf8_encode('<option value="' .$data_select_prestige_class['ID_ClasseP']. '">' .$data_select_prestige_class['ClasseP']. '</option>');
+                                        echo '<option value="' .$data_select_prestige_class['ID_ClasseP']. '">' .$data_select_prestige_class['ClasseP']. '</option>';
                                     }
 
 
@@ -223,7 +223,7 @@
 
                                                 for($j = 0; $j < min(sizeof($arr_class), sizeof($arr_id_class)); $j++)
                                                 {
-                                                    echo utf8_encode('<option value="' .$arr_id_class[$j]. '">' .$arr_class[$j]. '</option>');
+                                                    echo '<option value="' .$arr_id_class[$j]. '">' .$arr_class[$j]. '</option>';
                                                 }
 
                                         echo "</select>    
@@ -465,7 +465,7 @@
                 if(i < 5)
                 {
                     i++;
-                    $("#global_content").append('<div class="form-row" id="select-character-' + i + '"><div class="form-group col-md-3"><label for="select-character-class">Classe</label><div class="input-group mb-3"><div class="input-group-prepend" id="add"><label class="input-group-text"><i class="fas fa-minus-circle button_remove" id="' + i + '" style="cursor: pointer;"></i></label></div><select class="form-control" id="select-character-class"><option value selected>Aucune</option><?php for($i = 0; $i < min(sizeof($arr_class), sizeof($arr_id_class)); $i++){       echo utf8_encode('<option value="' .$arr_id_class[$i]. '">' .$arr_class[$i]. '</option>');}?></select></div></div><!-- Gestion du niveau --><div class="form-group col-md-2"><label for="select-character-level-class">Niveau</label><input type="number" name="select-character-level-class" id="select-character-level-class" class="form-control" min="1" max="30" maxlength="2" value="1" required /></div></div>');
+                    $("#global_content").append('<div class="form-row" id="select-character-' + i + '"><div class="form-group col-md-3"><label for="select-character-class">Classe</label><div class="input-group mb-3"><div class="input-group-prepend" id="add"><label class="input-group-text"><i class="fas fa-minus-circle button_remove" id="' + i + '" style="cursor: pointer;"></i></label></div><select class="form-control" id="select-character-class"><option value selected>Aucune</option><?php for($i = 0; $i < min(sizeof($arr_class), sizeof($arr_id_class)); $i++){       echo '<option value="' .$arr_id_class[$i]. '">' .$arr_class[$i]. '</option>';}?></select></div></div><!-- Gestion du niveau --><div class="form-group col-md-2"><label for="select-character-level-class">Niveau</label><input type="number" name="select-character-level-class" id="select-character-level-class" class="form-control" min="1" max="30" maxlength="2" value="1" required /></div></div>');
                 }
 
             });

@@ -67,7 +67,7 @@
 
                                             while($data_char = $q_select_char->fetch())
                                             {
-                                                echo utf8_encode("<option value='" .$data_char['ID_ClasseP']. "'>" .$data_char['ClasseP']. "</option>");
+                                                echo "<option value='" .$data_char['ID_ClasseP']. "'>" .$data_char['ClasseP']. "</option>";
                                             }
 
                                             $q_select_char->closeCursor();

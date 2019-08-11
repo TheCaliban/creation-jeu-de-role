@@ -14,7 +14,7 @@
         
         while($data_skill = $q_select_skill->fetch())
         {
-            array_push($arSkill, utf8_encode($data_skill['Competence']));
+            array_push($arSkill, $data_skill['Competence']);
         }
         
         echo json_encode($arSkill);

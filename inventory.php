@@ -106,7 +106,7 @@
                                         <div class="card col-md-4">
 
                                             <div class="card-body">
-                                                <h5 class="card-title"><?php echo utf8_encode($q_data_weapon['Weapon']); ?></h5>
+                                                <h5 class="card-title"><?php echo $q_data_weapon['Weapon']; ?></h5>
                                                 <p class="card-text">
                                                     <ul class="list-group list-group-flush">
                                                         <li class="list-group-item container">
@@ -190,7 +190,7 @@
 -->
                                             
                                             <div class="card-body">
-                                                <h5 class="card-title"><?php echo utf8_encode($q_data_armor['Armor']); ?></h5>
+                                                <h5 class="card-title"><?php echo $q_data_armor['Armor']; ?></h5>
                                                 <p class="card-text">
                                                     <ul class="list-group list-group-flush">
                                                         <li class="list-group-item container">

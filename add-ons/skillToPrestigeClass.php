@@ -19,7 +19,7 @@
         if($data_skills = $q_select_skills->fetch())
         {
 
-            echo utf8_encode('<li class="list-group-item">
+            echo '<li class="list-group-item">
                     <div class="row justify-content-around">
                         <div class="col-1">' .$data_skills['ID_Competence']. '</div>
                         <div class="col-6">' .$data_skills['Competence']. '</div>
@@ -27,11 +27,11 @@
                             <strong>' .$data_skills['Carac_Competence']. '</strong>
                         </div>
                     </div>
-                </li>');
+                </li>';
                 
             while($data_skills = $q_select_skills->fetch())
             {
-                echo utf8_encode('<li class="list-group-item">
+                echo '<li class="list-group-item">
                                     <div class="row justify-content-around">
                                         <div class="col-1">' .$data_skills['ID_Competence']. '</div>
                                         <div class="col-6">' .$data_skills['Competence']. '</div>
@@ -39,7 +39,7 @@
                                             <strong>' .$data_skills['Carac_Competence']. '</strong>
                                         </div>
                                     </div>
-                                </li>');
+                                </li>';
             }
             
         }

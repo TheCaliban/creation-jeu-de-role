@@ -16,5 +16,3 @@
 		
 		echo "Vos entrées ont bien été faites !";
 	}
-	
-?>

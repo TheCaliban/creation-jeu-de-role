@@ -160,7 +160,7 @@
 
                                                     while($data_class_race = $q_select_class_race->fetch())
                                                     {
-                                                        echo utf8_encode('<option value="' .$data_class_race['ID_Classe']. '">' .$data_class_race['Classe']. '</option>');
+                                                        echo '<option value="' .$data_class_race['ID_Classe']. '">' .$data_class_race['Classe']. '</option>';
                                                     }
 
                                                 ?>
@@ -240,7 +240,7 @@
                                     while($data_race = $q_select_race->fetch())
                                     {
 
-                                        echo utf8_encode("<tr>".
+                                        echo "<tr>".
                                                              "<td><span id='" .$data_race['ID_Race']. "-id'>" .$data_race['ID_Race']. "</td>".
                                                              "<td><span id='" .$data_race['ID_Race']. "-race'>" .$data_race['Race']. "</td>".
                                                              "<td><span id='" .$data_race['ID_Race']. "-sa' class='edit'>" .$data_race['SA']. "</td>".
@@ -253,7 +253,7 @@
                                                              "<td><span id='" .$data_race['ID_Race']. "-idcp'>" .$data_race['IDCP']. "</td>".
                                                              "<td><span id='" .$data_race['ID_Race']. "-size' class='edit'>" .$data_race['Size']. "</td>".
                                                              "<td><button type='button' class='delete close mr-3' id='" .$data_race['ID_Race']. "' aria-label='Close'><i class='fas fa-times' aria-hidden='true' style='color: red;'></i></button></td>".
-                                                         "</tr>");
+                                                         "</tr>";
                                     }
 
                                     $q_select_race->closeCursor();

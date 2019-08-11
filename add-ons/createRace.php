@@ -23,5 +23,3 @@
         exit;
     }
     echo 'error';
-
-?>
