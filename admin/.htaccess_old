@@ -1,6 +1,0 @@
-AuthType Basic
-AuthName "Administration"
-AuthUserFile /home/remi/html/admin/.htpasswd
-require user admin
-
-Options -Indexes
