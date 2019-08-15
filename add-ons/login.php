@@ -23,10 +23,13 @@
         else
         {
             echo 'Wrong arguments';
-        }        
+        }
+        exit;
+        
+        
     }
     else
     {
         echo 'Missing argument';
     }
-    header("Refresh: 0");
+    exit;

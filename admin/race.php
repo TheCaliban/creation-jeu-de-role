@@ -305,7 +305,7 @@
                 console.info("delete");
 
                 $.ajax({
-                    url: '/add-ons/deleteRace.php',
+                    url: '/add-ons/ajax_race.php',
                     type: 'POST',
                     data: "id=" + id,
                     success: function(data){
@@ -349,7 +349,7 @@
                 if(idRace != "" && race != "" && strenght != "")
                 {
                     $.ajax({
-                        url: '/add-ons/createRace.php',
+                        url: '/add-ons/ajax_race.php',
                         type: 'POST',
                         data: 'idRace=' + idRace.toUpperCase() +
                               '&race=' + race +
@@ -396,7 +396,9 @@
                 console.info("Reload table");
                 
                 $.ajax({
-                    url: "/add-ons/reloadTableRace.php",
+                    url: "/add-ons/ajax_race.php",
+                    data: "reload",
+                    method: "POST",
                     dataType: 'json',
                     success: function(data){
                         data.forEach(function(subArray){

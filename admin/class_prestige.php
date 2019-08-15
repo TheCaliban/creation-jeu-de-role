@@ -193,7 +193,7 @@
             
             $("#buttonCreate").on("click", function() {
                 $.ajax({
-                    url: "/add-ons/createPrestigeClass.php",
+                    url: "/add-ons/ajax_prestige.php",
                     type: 'POST',
                     data: "id=" 	 + $("#inputID").val() + 
                           "&classe=" + $("#inputClasse").val(),
@@ -219,7 +219,7 @@
 			var jsonString = JSON.stringify(chkArray);
 			
 			$.ajax({
-				url: "/add-ons/addPrestigeSkills.php",
+				url: "/add-ons/ajax_prestige.php",
 				type: 'POST',
 				data: {data : jsonString , id_classe : $("#select-character").val()},
 				success: function (data) {
@@ -233,7 +233,7 @@
         function loadSkills(selector)
         {
 			$.ajax({
-				url: "/add-ons/skillToPrestigeClass.php",
+				url: "/add-ons/ajax_prestige.php",
 				type: 'POST',
 				data: "id_character=" + selector.val(),
 				success: function (data) {
@@ -242,7 +242,7 @@
 			});
             
 			$.ajax({
-				url: "/add-ons/reloadListPrestigeSkill.php",
+				url: "/add-ons/ajax_prestige.php",
 				type: 'POST',
 				data: "ID_Classe=" + selector.val(),
 				success: function (data) {

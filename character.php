@@ -431,9 +431,9 @@
                 let value = $(this).val();
 
                 $.ajax({
-                    url: "/add-ons/helpRace.php",
+                    url: "/add-ons/ajax_index.php",
                     type: 'POST',
-                    data: "id_character=" + value,
+                    data: "id_character=" + value + "&predilection",
                     success: function (data) {
                         $("#inputRaceHelp").html(data);
                         reloadStatRace();
@@ -445,9 +445,9 @@
             
             $("#select-character-prestige-class").on("change", function() {
                 $.ajax({
-                    url: "/add-ons/levelClass.php",
+                    url: "/add-ons/ajax_index.php",
                     type: 'POST',
-                    data: "id=" + $("#select-character-prestige-class").val(),
+                    data: "id=" + $("#select-character-prestige-class").val() + "&level",
                     success: function (data) {
                         $("#select-character-level-prestige-class").html(data);
                         console.info('Ajax prestige class ok');
@@ -527,10 +527,10 @@
                 reloadStatRace();
                 
                 $.ajax({
-                    url: "/add-ons/skillClass.php",
+                    url: "/add-ons/ajax_index.php",
                     type: 'POST',
                     dataType: 'json',
-                    data : 'id=' + $("#select-character-class").val(),
+                    data : 'id=' + $("#select-character-class").val() + "&skill",
                     success: function(data) {
                         var tmp = '';
                         
@@ -541,11 +541,13 @@
                         
                         if(tmp === '') { $('#select-character-class').removeAttr("data-original-title"); }
                         
-                        $('#select-character-class').tooltip({html: true}).attr('data-original-title', tmp);
-                        
+                        $('#select-character-class').tooltip({html: true, animation: true}).attr('data-original-title', tmp);
+                                                              
+                        $('#select-character-class').tooltip('update');
                         console.info('Ajax tooltip ok');
                     },
                     error: function(data) {
+                        console.error(data);
                         console.error("Erreur tooltips ajax");
                     }
                 });
@@ -581,7 +583,7 @@
                 {
 
                     $.ajax({
-                        url: '/add-ons/statRace.php',
+                        url: '/add-ons/ajax_index.php',
                         type: 'POST',
                         dataType: 'json',
                         data: 'id=' + $("#select-character-race").val(),

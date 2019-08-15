@@ -57,13 +57,11 @@
 
 								</div>
 
-								<select id="select-character-feat" class="form-control">
-									<option value selected></option>
+								<select id="select-character-feat" class="form-control" >
+									<option value selected >Sélectionnez un don...</option>
 									<?php
 
 										$q_select_feat->execute();
-										$type;
-
 
 										while($data_feat = $q_select_feat->fetch())
 										{
@@ -226,10 +224,10 @@
             
             $("#select-character-feat").change(function() {
 				$.ajax({
-					url: "/add-ons/listFeat.php",
+					url: "/add-ons/ajax_feat.php",
 					type: 'POST',
 					data: "ID_Feat=" + $("#select-character-feat").val().split("-")[0] +
-						  "&FeatType=" + $("#select-character-feat").val().split("-")[1],
+						  "&featType=" + $("#select-character-feat").val().split("-")[1],
 					success: function (data) {
 						console.log($("#inputFeatType").val());
 						console.log("Data: " + data);
@@ -250,7 +248,7 @@
 					url: '/add-ons/reloadMaxIDFeat.php',
 					type: 'POST',
 					dataType: 'html',
-					data: "featType=" + $("#inputFeatType").val(),
+					data: "featType=" + $("#inputFeatType").val() + "&reload",
 					success: function(data){
 						console.log(data);
 						
@@ -275,7 +273,7 @@
 				featMTNC = $("#inputMTNC").val();
 				
 				$.ajax({
-					url: '/add-ons/createFeat.php',
+					url: '/add-ons/ajax_feat.php',
 					type: 'POST',
 					dataType: 'text',
 					data: "id= " + featID +

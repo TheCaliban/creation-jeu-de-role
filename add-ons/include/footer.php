@@ -97,47 +97,47 @@
             
             /***********************************************************/
             
-           $("#btn_connect").click(function() {
-                let password = $("#inputPassword").val();
-                let username = $("#inputUsername").val();
-               
-               
+            $("#btn_connect").click(function() {
+            let password = $("#inputPassword").val();
+            let username = $("#inputUsername").val();
+
+
                 $('#inputUsername').removeClass('is-invalid');
                 $('#invalid-feedback-user').hide();  
 
                 $('#inputPassword').removeClass('is-invalid');
                 $('#invalid-feedback-pass').hide();
-               
-               if(username.length < 1)
+
+                if(username.length < 1)
                 {
                     $('#inputUsername').addClass('is-invalid');
                     $('#invalid-feedback-user').show();
                     return;
                 }
 
-               if(password.length < 1)
+                if(password.length < 1)
                 {
                     $('#inputPassword').addClass('is-invalid');
                     $('#invalid-feedback-pass').show();
                     return;
                 }
 
-                    $.ajax({
-                        url: '/add-ons/login.php',
-                        type: 'POST',
-                        data: 'user=' + username + '&pass=' + password,
-                        success: function(data){
-                            
-                            $('#form_login')[0].reset();
-                            window.location = '/admin/';
-                            console.log(data);
-                        },
-                        error: function(data){
-                            console.error(data);
-                        }
-                    });
+                $.ajax({
+                    url: '/add-ons/login.php',
+                    type: 'POST',
+                    data: 'user=' + username + '&pass=' + password,
+                    success: function(data){
+
+                        $('#form_login')[0].reset();
+                        document.location.reload();
+                        console.log(data);
+                    },
+                    error: function(data){
+                        console.error(data);
+                    }
+                });
            });
-    });
+        });
 
     
 

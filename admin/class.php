@@ -248,7 +248,7 @@
 		
             $("#buttonCreate").on("click", function() {
                 $.ajax({
-                    url: "/add-ons/createClass.php",
+                    url: "/add-ons/ajax_class.php",
                     type: 'POST',
                     data: "id=" 	 + $("#inputID").val() + 
                           "&classe=" + $("#inputClasse").val() +
@@ -290,7 +290,7 @@
 			var jsonString = JSON.stringify(chkArray);
 			
 			$.ajax({
-				url: "/add-ons/addSkills.php",
+				url: "/add-ons/ajax_class.php",
 				type: 'POST',
 				data: {data : jsonString , id_classe : $("#select-character").val()},
 				success: function (data) {
@@ -304,7 +304,7 @@
         function loadSkills(selector)
         {
             $.ajax({
-				url: "/add-ons/skillToClass.php",
+				url: "/add-ons/ajax_class.php",
 				type: 'POST',
 				data: "id_character=" + selector.val(),
 				success: function (data) {
@@ -313,7 +313,7 @@
 			});
             
 			$.ajax({
-				url: "/add-ons/reloadListSkill.php",
+				url: "/add-ons/ajax_class.php",
 				type: 'POST',
 				data: "ID_Classe=" + selector.val(),
 				success: function (data) {
